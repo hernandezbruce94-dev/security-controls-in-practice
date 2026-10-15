@@ -1,0 +1,8 @@
+// Chapters 5 and 20: every Conditional Access policy change, for drift review (Case 5-E).
+AuditLogs
+| where TimeGenerated > ago(90d)
+| where OperationName has "conditional access policy"
+| extend Actor = tostring(InitiatedBy.user.userPrincipalName),
+         Policy = tostring(TargetResources[0].displayName)
+| project TimeGenerated, OperationName, Policy, Actor, Result, CorrelationId
+| order by TimeGenerated desc

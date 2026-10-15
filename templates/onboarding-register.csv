@@ -1,0 +1,3 @@
+source,integration_method,service_identity,dataset,expected_daily_events,expected_fields,max_latency_target_s,last_volume_check_utc,last_field_check_utc,last_latency_check_utc,duplicate_check_utc,owner,status
+PA-Series NGFW (DC1),Native NGFW integration,n/a,<dataset>,<count>,"user, src, dst, app, action, rule",300,,,,,Network Security,Documented
+Okta,API integration,<service identity - not a named admin (Case 18-B)>,<dataset>,<count>,"actor, outcome, client ip, device",300,,,,,Identity Engineering,Documented

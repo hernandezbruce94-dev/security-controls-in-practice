@@ -1,0 +1,22 @@
+{
+  "displayName": "CA-012 Require compliant device - M365 (pilot)",
+  "state": "enabledForReportingButNotEnforced",
+  "conditions": {
+    "users": {
+      "includeGroups": ["<object-id-of-CA-Pilot-CompliantDevice>"],
+      "excludeGroups": ["<object-id-of-BG-Emergency-Access>"],
+      "excludeUsers": ["<object-id-of-directory-sync-account>"]
+    },
+    "applications": {
+      "includeApplications": ["Office365"]
+    },
+    "platforms": {
+      "includePlatforms": ["windows", "macOS"]
+    },
+    "clientAppTypes": ["all"]
+  },
+  "grantControls": {
+    "operator": "OR",
+    "builtInControls": ["compliantDevice"]
+  }
+}

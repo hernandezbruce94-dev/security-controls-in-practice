@@ -1,0 +1,7 @@
+test_id,case,expected_observation,case_type,preconditions,observed_result,evidence_reference,result,tester,date_time_utc,reviewer,evidence_status
+V16-1,Send an attachment containing the EICAR test string to a pilot user,Quarantined as malware; user cannot release; admin can,,,,,,,,,Documented
+V16-2,Send a message with a test URL to a Strict recipient,URL wrapped or checked at click per policy,,,,,,,,,Documented
+V16-3,Check effective policy for a Finance user,Configuration analyzer or message trace shows Strict preset applied,,,,,,,,,Documented
+V16-4,Run an attack simulation phishing campaign,"Report shows delivery, clicks, and reports per user",,,,,,,,,Documented
+V16-5,User reports a spam message,Report appears in submissions,,,,,,,,,Documented
+V16-6,Teams message with test URL after 24 hours,Safe Links check applied,,,,,,,,,Documented

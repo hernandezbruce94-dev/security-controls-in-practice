@@ -1,0 +1,5 @@
+test_id,case,expected_observation,case_type,preconditions,observed_result,evidence_reference,result,tester,date_time_utc,reviewer,evidence_status
+V3-1,Execute rollback for a staged change,Control returns to prior state within the documented time,,,,,,,,,Documented
+V3-2,Review a pilot group's membership,Contains only intended users; no nested groups with broad membership,,,,,,,,,Documented
+V3-3,Search for controls in observation mode older than 90 days,Each has a documented reason and an enforcement date,,,,,,,,,Documented
+V3-4,Compare pilot denial rate to prediction,Within the agreed tolerance,,,,,,,,,Documented

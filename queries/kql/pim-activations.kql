@@ -1,0 +1,10 @@
+// Chapter 6: PIM role activations with justification.
+AuditLogs
+| where TimeGenerated > ago(30d)
+| where LoggedByService == "PIM"
+| where OperationName has "Add member to role completed (PIM activation)"
+| extend Actor = tostring(InitiatedBy.user.userPrincipalName),
+         Role = tostring(TargetResources[0].displayName)
+| project TimeGenerated, Actor, Role, ResultReason
+| order by TimeGenerated desc
+// Operation names vary; list distinct OperationName values for LoggedByService == "PIM" in your tenant first.

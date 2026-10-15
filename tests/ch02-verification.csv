@@ -1,0 +1,6 @@
+test_id,case,expected_observation,case_type,preconditions,observed_result,evidence_reference,result,tester,date_time_utc,reviewer,evidence_status
+V2-1,Trace Scenario B from a test laptop,"Each hop appears in the expected log: ZPA user activity, App Connector, ERP access log",,,,,,,,,Documented
+V2-2,Attempt direct access from the internet to 10.40.8.20,No route; no inbound path to DC1 except the published VIP,,,,,,,,,Documented
+V2-3,List every firewall rule allowing untrust to dc-apps,Only rules tied to documented published services,,,,,,,,,Documented
+V2-4,Compare Okta and Entra ID active-user lists to HR,No account active in either directory for a terminated employee,,,,,,,,,Documented
+V2-5,List every identity with standing administrative roles,Only emergency access accounts; all others eligible,,,,,,,,,Documented

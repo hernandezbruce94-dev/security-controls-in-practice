@@ -1,0 +1,7 @@
+test_id,case,expected_observation,case_type,preconditions,observed_result,evidence_reference,result,tester,date_time_utc,reviewer,evidence_status
+V15-1,Sample ten closed P1/P2 findings,"Each has a later scan with the plugin not detected, using credentialed checks",,,,,,,,,Documented
+V15-2,Finding closed by owner without retest,Reopened by the integration on next detection,,,,,,,,,Documented
+V15-3,Mitigated finding,Remains open with mitigation recorded and target fix date,,,,,,,,,Documented
+V15-4,Exception past expiry,Finding returns to active; owner notified,,,,,,,,,Documented
+V15-5,KEV addition for a CVE present at Meridian,Priority recalculated to P1 or P2 within one business day,,,,,,,,,Documented
+V15-6,Retest run uncredentialed,Not accepted as closure evidence,,,,,,,,,Documented

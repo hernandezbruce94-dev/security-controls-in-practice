@@ -1,0 +1,7 @@
+test_id,case,expected_observation,case_type,preconditions,observed_result,evidence_reference,result,tester,date_time_utc,reviewer,evidence_status
+V11-1,Create storage account with Shared Key enabled in a production subscription,Deployment denied with policy assignment named in the error,,,,,,,,,Documented
+V11-2,Same deployment in a sandbox subscription outside mg-meridian-prod,Allowed (boundary),,,,,,,,,Documented
+V11-3,Update existing compliant account to enable public blob access,Denied,,,,,,,,,Documented
+V11-4,Existing noncompliant account created before assignment,Reported noncompliant; not changed (expected),,,,,,,,,Documented
+V11-5,Exempted resource,Shows exempt with category and expiry,,,,,,,,,Documented
+V11-6,Exemption past expiry,Resource returns to noncompliant,,,,,,,,,Documented

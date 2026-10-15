@@ -1,0 +1,13 @@
+// Chapter 5: CA-012 results by outcome, platform, and browser (report-only or enforced).
+SigninLogs
+| where TimeGenerated > ago(7d)
+| mv-expand CAP = ConditionalAccessPolicies
+| where tostring(CAP.displayName) startswith "CA-012"
+| extend Result = tostring(CAP.result),
+         OS = tostring(DeviceDetail.operatingSystem),
+         Browser = tostring(DeviceDetail.browser),
+         DeviceId = tostring(DeviceDetail.deviceId),
+         Compliant = tostring(DeviceDetail.isCompliant)
+| summarize SignIns = count(), Users = dcount(UserPrincipalName) by Result, OS, Browser, Compliant, HasDeviceId = isnotempty(DeviceId)
+| order by SignIns desc
+// Failures with HasDeviceId == false usually mean the browser did not pass device identity (Case 5-B).

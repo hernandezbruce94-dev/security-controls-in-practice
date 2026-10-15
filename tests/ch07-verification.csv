@@ -1,0 +1,8 @@
+test_id,case,expected_observation,case_type,preconditions,observed_result,evidence_reference,result,tester,date_time_utc,reviewer,evidence_status
+V7-1,Finance user on 10.20.4.15 browses to ERP,"Traffic log: rule USR-to-ERP-web, action allow, app ssl",,,,,,,,,Documented
+V7-2,Non-finance user browses to ERP,"Traffic log: interzone-default, action deny",,,,,,,,,Documented
+V7-3,Finance user attempts SSH to 10.40.8.20,Denied; ssh not allowed by rule 10,,,,,,,,,Documented
+V7-4,Internet client connects to 203.0.113.40:443,Rule INET-to-Portal matches; NAT translated to DMZ server,,,,,,,,,Documented
+V7-5,SSL on a nonstandard port to ERP,Denied by application-default service,,,,,,,,,Documented
+V7-6,EICAR test file over HTTP from an internal lab server (or a decrypted path),Threat log entry; session end reason threat; file blocked,,,,,,,,,Documented
+V7-7,Finance user runs the ERP reporting client,Allowed by rule 10 as the custom application; generic unknown-tcp to the same server still denied,,,,,,,,,Documented

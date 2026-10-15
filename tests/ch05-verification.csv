@@ -1,0 +1,8 @@
+test_id,case,expected_observation,case_type,preconditions,observed_result,evidence_reference,result,tester,date_time_utc,reviewer,evidence_status
+V5-1,"Pilot user, compliant laptop, Outlook",Sign-in succeeds; CA-012 result Success,,,,,,,,,Documented
+V5-2,"Pilot user, laptop failing BitLocker",Blocked; CA-012 result Failure; user sees remediation message,,,,,,,,,Documented
+V5-3,"User outside pilot, noncompliant laptop",Not affected; CA-012 Not applied,,,,,,,,,Documented
+V5-4,Emergency access account,CA-012 Not applied; sign-in alert fires (Chapter 6),,,,,,,,,Documented
+V5-5,Enrolled device with no compliance policy,Not compliant; access blocked,,,,,,,,,Documented
+V5-6,Device offline past validity period,Not compliant until check-in,,,,,,,,,Documented
+V5-7,"Pilot user, compliant laptop, each supported browser",Same CA-012 result and device ID in every browser,,,,,,,,,Documented

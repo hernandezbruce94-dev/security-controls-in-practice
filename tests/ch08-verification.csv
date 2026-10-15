@@ -1,0 +1,8 @@
+test_id,case,expected_observation,case_type,preconditions,observed_result,evidence_reference,result,tester,date_time_utc,reviewer,evidence_status
+V8-1,Finance user on managed laptop opens ERP,Access allowed; user activity log shows ZPA-Finance-ERP,,,,,,,,,Documented
+V8-2,Non-finance user opens ERP,Denied; no matching allow rule,,,,,,,,,Documented
+V8-3,Finance user on device failing posture,Denied,,,,,,,,,Documented
+V8-4,Finance user attempts RDP to the ERP server,Fails; segment allows only TCP 443,,,,,,,,,Documented
+V8-5,External port scan of DC1 public range,No listener for remote access,,,,,,,,,Documented
+V8-6,Stop one App Connector,Sessions continue through the second connector,,,,,,,,,Documented
+V8-7,"Newly published application, tested by an authorized user and an IT discovery user",Authorized user allowed by the application's own rule; discovery user denied,,,,,,,,,Documented

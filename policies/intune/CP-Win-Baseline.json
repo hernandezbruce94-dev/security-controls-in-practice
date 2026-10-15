@@ -1,0 +1,24 @@
+{
+  "@odata.type": "#microsoft.graph.windows10CompliancePolicy",
+  "displayName": "CP-Win-Baseline",
+  "description": "Chapter 5 Windows compliance baseline. Owner: End-User Computing.",
+  "bitLockerEnabled": true,
+  "secureBootEnabled": true,
+  "codeIntegrityEnabled": true,
+  "osMinimumVersion": "<minimum-supported-build, e.g. 10.0.22631>",
+  "activeFirewallRequired": true,
+  "defenderEnabled": true,
+  "rtpEnabled": true,
+  "antivirusRequired": true,
+  "antiSpywareRequired": true,
+  "signatureOutOfDate": true,
+  "scheduledActionsForRule": [
+    {
+      "ruleName": "PasswordRequired",
+      "scheduledActionConfigurations": [
+        { "actionType": "block", "gracePeriodHours": 24 },
+        { "actionType": "notification", "gracePeriodHours": 0, "notificationTemplateId": "<template-id>" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+test_id,case,expected_observation,case_type,preconditions,observed_result,evidence_reference,result,tester,date_time_utc,reviewer,evidence_status
+V19-1,"Test user denies six pushes, then signs in from a new test device",Case created at high severity within target time,,,,,,,,,Documented
+V19-2,Test user denies six pushes but does not sign in,No high-severity case (boundary),,,,,,,,,Documented
+V19-3,Analyst approves response,Okta sessions cleared and Entra sessions revoked for the test user only; actions logged,,,,,,,,,Documented
+V19-4,Analyst rejects response,No action taken; rejection reason recorded,,,,,,,,,Documented
+V19-5,Okta integration disabled in test window,Ingestion health alert; detection gap noted,,,,,,,,,Documented
+V19-6,EICAR on a test laptop,Automatic isolation of the laptop only; release restores connectivity,,,,,,,,,Documented

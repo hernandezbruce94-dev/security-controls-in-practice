@@ -1,0 +1,6 @@
+test_id,case,expected_observation,case_type,preconditions,observed_result,evidence_reference,result,tester,date_time_utc,reviewer,evidence_status
+V20-1,Make an unapproved change to a test CA policy,Drift ticket opened next morning,,,,,,,,,Documented
+V20-2,Make an approved change with change record,Baseline updated; no drift ticket,,,,,,,,,Documented
+V20-3,Restore a Panorama snapshot to lab,Restored rulebase passes V7 cases,,,,,,,,,Documented
+V20-4,Review one accepted control's register,All acceptance criteria evidenced,,,,,,,,,Documented
+V20-5,Find controls with evidence older than review window,Marked stale and scheduled for re-test,,,,,,,,,Documented

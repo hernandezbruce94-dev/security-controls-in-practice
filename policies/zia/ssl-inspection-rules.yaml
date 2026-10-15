@@ -1,0 +1,42 @@
+# Chapter 9: ZIA SSL/TLS inspection rule design (not an import format).
+# Status: Design pattern. Rules are ordered; exemptions sit above the broad Inspect rule.
+rules:
+  - order: 1
+    name: SSL-Pinned-Apps
+    criteria: { custom_url_category: Pinned-App-Destinations }   # individual hostnames only
+    action: do_not_inspect
+    do_not_inspect_mode: evaluate_other_policies
+  - order: 2
+    name: SSL-Privacy
+    criteria: { url_categories: [Health, Finance-personal-banking] }
+    action: do_not_inspect
+    do_not_inspect_mode: evaluate_other_policies
+    review: monthly top-destination review (Case 9-C)
+  - order: 3
+    name: SSL-Break-Glass-Bypass
+    criteria: { custom_url_category: Bypass-Approved }   # no wildcards; each entry has owner + expiry (Case 9-B)
+    action: do_not_inspect
+    do_not_inspect_mode: bypass_other_policies
+  - order: 4
+    name: SSL-Inspect-All
+    criteria: { users: all }
+    action: inspect
+    settings:
+      untrusted_server_certificates: block
+      ocsp_revocation_check: enabled
+      minimum_tls_version: TLS1.2
+      block_no_sni: enabled
+related_controls:
+  firewall_filtering:
+    - name: Block-QUIC          # Case 9-E
+      network_service: QUIC
+      action: block_icmp
+  dns_control:
+    - name: Block-HTTPS-SVCB-Records
+      request_types: [HTTPS, SVCB]
+      action: block_with_response_code_server_failure
+developer_trust_settings:       # Case 9-A
+  NODE_EXTRA_CA_CERTS: <path-to-inspection-root.pem>
+  REQUESTS_CA_BUNDLE: <path-to-bundle-including-inspection-root.pem>
+  pip_cert: <path-to-bundle-including-inspection-root.pem>
+  git_http.sslCAInfo: <path-to-bundle-including-inspection-root.pem>

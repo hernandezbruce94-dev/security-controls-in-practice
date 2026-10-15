@@ -1,0 +1,7 @@
+test_id,case,expected_observation,case_type,preconditions,observed_result,evidence_reference,result,tester,date_time_utc,reviewer,evidence_status
+V6-1,Eligible admin activates Exchange Administrator,"MFA prompt; justification required; role active for 4 hours, then expires",,,,,,,,,Documented
+V6-2,Eligible admin activates Global Administrator,Approval request sent; role not active until approved,,,,,,,,,Documented
+V6-3,Daily account attempts admin portal action,Denied; no role,,,,,,,,,Documented
+V6-4,Emergency account sign-in (scheduled test),Sign-in succeeds; XSIAM high-severity alert within minutes,,,,,,,,,Documented
+V6-5,List active privileged assignments,Only emergency accounts,,,,,,,,,Documented
+V6-6,List workload identities without owner,None,,,,,,,,,Documented

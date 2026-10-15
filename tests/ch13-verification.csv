@@ -1,0 +1,7 @@
+test_id,case,expected_observation,case_type,preconditions,observed_result,evidence_reference,result,tester,date_time_utc,reviewer,evidence_status
+V13-1,Make a test bucket publicly readable in a sandbox account,Config rule shows noncompliant; XSIAM alert,,,,,,,,,Documented
+V13-2,invoice-proc-01 reads an invoice,CloudTrail data event GetObject with role session name,,,,,,,,,Documented
+V13-3,Read an object in a bucket without data events,No data event (expected; confirms scope),,,,,,,,,Documented
+V13-4,Member-account admin attempts StopLogging,Denied by SCP,,,,,,,,,Documented
+V13-5,Validate log file integrity for one day,Validation reports no modified or deleted files,,,,,,,,,Documented
+V13-6,Proactive evaluation of a noncompliant template,Result NON_COMPLIANT; deployment proceeds unless a hook blocks it (expected),,,,,,,,,Documented

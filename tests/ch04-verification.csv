@@ -1,0 +1,8 @@
+test_id,case,expected_observation,case_type,preconditions,observed_result,evidence_reference,result,tester,date_time_utc,reviewer,evidence_status
+V4-1,"Pilot user, managed laptop, Okta Verify number challenge",Access granted; System Log shows the policy evaluation and successful SSO,,,,,,,,,Documented
+V4-2,"Pilot user, unmanaged personal laptop",Access denied by the catch-all rule,,,,,,,,,Documented
+V4-3,User not in PILOT-FieldPortal or APP-FieldPortal-Users,Application does not appear on dashboard; direct URL refused,,,,,,,,,Documented
+V4-4,Pilot user with only SMS enrolled,Denied; no rule allows SMS,,,,,,,,,Documented
+V4-5,Attempt local password sign-in at the portal,Refused for all accounts except the vaulted break-glass,,,,,,,,,Documented
+V4-6,Pilot user returns after five hours,Prompted to re-authenticate,,,,,,,,,Documented
+V4-7,"After any edit to a shared policy, one assigned user per attached application signs in",Each application reachable; policy evaluation shows the intended rule,,,,,,,,,Documented

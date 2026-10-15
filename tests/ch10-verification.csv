@@ -1,0 +1,7 @@
+test_id,case,expected_observation,case_type,preconditions,observed_result,evidence_reference,result,tester,date_time_utc,reviewer,evidence_status
+V10-1,Job uploads to service-exports with --auth-mode login,Upload succeeds; storage log shows OAuth authorization by mi-export-writer,,,,,,,,,Documented
+V10-2,Identity attempts to list or write archive container,403 AuthorizationPermissionMismatch,,,,,,,,,Documented
+V10-3,Request authorized with an account key,Rejected; Shared Key disabled,,,,,,,,,Documented
+V10-4,Engineer with only Contributor on the account reads a blob with --auth-mode login,Denied; Contributor is not a data role,,,,,,,,,Documented
+V10-5,Connection from outside the private endpoint,Refused; public network access disabled,,,,,,,,,Documented
+V10-6,Search VM and job config for keys or SAS strings,None found,,,,,,,,,Documented

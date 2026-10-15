@@ -1,0 +1,7 @@
+test_id,case,expected_observation,case_type,preconditions,observed_result,evidence_reference,result,tester,date_time_utc,reviewer,evidence_status
+V14-1,Review plugin 19506 for a sample of Windows servers,Credentialed checks : yes,,,,,,,,,Documented
+V14-2,Scan a server where the scan account lacks admin rights,Insufficient privilege plugin fires; asset appears in the authenticated-but-not-fully-assessed gap,,,,,,,,,Documented
+V14-3,Asset in CMDB with no scan result in 14 days,Appears in the not-seen gap with owner,,,,,,,,,Documented
+V14-4,Laptop off network for a week,Agent results current,,,,,,,,,Documented
+V14-5,Install a known-vulnerable test package on a lab server,Detected on next scan,,,,,,,,,Documented
+V14-6,Excluded asset,"Listed with reason, owner, and review date",,,,,,,,,Documented

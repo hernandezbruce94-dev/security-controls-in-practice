@@ -1,0 +1,7 @@
+test_id,case,expected_observation,case_type,preconditions,observed_result,evidence_reference,result,tester,date_time_utc,reviewer,evidence_status
+V17-1,Share a file with 2 test account numbers externally,Policy tip; override with justification permitted and logged,,,,,,,,,Documented
+V17-2,Share a file with 10 test account numbers externally,Blocked; alert raised,,,,,,,,,Documented
+V17-3,Share the same file internally,No action (boundary),,,,,,,,,Documented
+V17-4,Share from Finance-Audit to the auditor domain,Allowed per exception,,,,,,,,,Documented
+V17-5,Ten-digit number with no supporting keywords,No match,,,,,,,,,Documented
+V17-6,"Policy in simulation, high-volume share","Match recorded, no block (expected; confirms simulation behavior)",,,,,,,,,Documented

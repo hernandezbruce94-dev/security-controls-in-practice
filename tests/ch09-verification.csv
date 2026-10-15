@@ -1,0 +1,8 @@
+test_id,case,expected_observation,case_type,preconditions,observed_result,evidence_reference,result,tester,date_time_utc,reviewer,evidence_status
+V9-1,Pilot user browses a general news site,Certificate issued by inspection CA; web log shows inspected,,,,,,,,,Documented
+V9-2,Pilot user visits a health-category site,Original site certificate; log shows not inspected; URL policy still evaluated,,,,,,,,,Documented
+V9-3,Pilot user requests a URL in a blocked category over HTTPS,Blocked with notification page,,,,,,,,,Documented
+V9-4,User on Bypass-Approved destination,Not inspected; URL policy not applied (expected),,,,,,,,,Documented
+V9-5,Download EICAR test file over HTTPS,Blocked by malware protection; visible only because traffic was inspected,,,,,,,,,Documented
+V9-6,Device without trusted certificate,Certificate error (expected failure condition; confirms trust is required),,,,,,,,,Documented
+V9-7,Developer workstation installs packages and clones a repository with inspection on,Succeeds; traffic logged as inspected; no destination exemptions needed,,,,,,,,,Documented

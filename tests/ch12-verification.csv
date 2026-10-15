@@ -1,0 +1,7 @@
+test_id,case,expected_observation,case_type,preconditions,observed_result,evidence_reference,result,tester,date_time_utc,reviewer,evidence_status
+V12-1,Read object under incoming/,Success; CloudTrail data event shows the assumed role session,,,,,,,,,Documented
+V12-2,Read object under processed/,AccessDenied (implicit deny),,,,,,,,,Documented
+V12-3,List bucket with prefix processed/,AccessDenied (condition not met),,,,,,,,,Documented
+V12-4,Write object to incoming/,AccessDenied; no PutObject permission,,,,,,,,,Documented
+V12-5,Request over HTTP (no TLS),Denied by bucket policy explicit deny,,,,,,,,,Documented
+V12-6,Admin role reads incoming/,Denied by bucket policy unless break-glass role,,,,,,,,,Documented

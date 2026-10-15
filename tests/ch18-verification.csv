@@ -1,0 +1,9 @@
+test_id,case,expected_observation,case_type,preconditions,observed_result,evidence_reference,result,tester,date_time_utc,reviewer,evidence_status
+V18-1,Count NGFW traffic events in the last hour per firewall,"Both DC1 firewalls present, volume within expected range",,,,,,,,,Documented
+V18-2,Generate an Okta test sign-in,Event queryable within the documented latency target,,,,,,,,,Documented
+V18-3,Generate a denied firewall session (V7-2),Event in dataset with rule name interzone-default,,,,,,,,,Documented
+V18-4,Disable one integration in a test window,Ingestion health alert within threshold,,,,,,,,,Documented
+V18-5,Check field population for user on firewall events,User populated for users-zone traffic (User-ID working),,,,,,,,,Documented
+V18-6,PIM activation (V6-1),Event present in Entra data,,,,,,,,,Documented
+V18-7,Latency query for each source,No negative lag; maximum lag within target,,,,,,,,,Documented
+V18-8,"Count events by event ID for one day, per source",No duplicate event IDs,,,,,,,,,Documented

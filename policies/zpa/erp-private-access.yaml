@@ -1,0 +1,31 @@
+# Chapter 8: ZPA design specification (not an import format).
+# Status: Design pattern. Recreate these objects in the ZPA Admin Portal or
+# with your chosen automation, then record object IDs in the control register.
+
+app_connector_group:
+  name: ACG-DC1
+  connectors: [zpa-ac-dc1-01, zpa-ac-dc1-02]   # separate hosts / failure domains (Case 8-E)
+server_group:
+  name: SG-DC1-ERP
+  app_connector_groups: [ACG-DC1]
+segment_group:
+  name: SGRP-Finance-Apps
+application_segments:
+  - name: SEG-ERP-Web
+    domains: [erp.meridian.internal]           # exact FQDN, no wildcard
+    tcp_ports: [443]
+    segment_group: SGRP-Finance-Apps
+    server_groups: [SG-DC1-ERP]
+access_policy_rules:                            # evaluated in order; first match applies
+  - order: 10
+    name: ZPA-Finance-ERP
+    action: allow
+    segment_groups: [SGRP-Finance-Apps]
+    criteria:
+      saml_or_scim_group: Finance-ERP
+      posture_profile: Meridian-Managed
+# Requests not allowed by a rule are not granted.
+connector_subnet_dependencies:                  # Case 8-B
+  - outbound to Zscaler cloud per Zscaler documentation
+  - DNS to internal resolvers
+  - TCP 443 to ERP web tier only

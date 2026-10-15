@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    { "Sid": "ProtectAuditLogging",
+      "Effect": "Deny",
+      "Action": [
+        "cloudtrail:StopLogging",
+        "cloudtrail:DeleteTrail",
+        "cloudtrail:UpdateTrail",
+        "cloudtrail:PutEventSelectors",
+        "config:StopConfigurationRecorder",
+        "config:DeleteConfigurationRecorder",
+        "config:DeleteDeliveryChannel"
+      ],
+      "Resource": "*",
+      "Condition": { "StringNotLike": { "aws:PrincipalArn": "arn:aws:iam::*:role/<security-admin-role>" } } },
+    { "Sid": "ProtectBlockPublicAccess",
+      "Effect": "Deny",
+      "Action": [ "s3:PutAccountPublicAccessBlock" ],
+      "Resource": "*",
+      "Condition": { "StringNotLike": { "aws:PrincipalArn": "arn:aws:iam::*:role/<security-admin-role>" } } }
+  ]
+}

@@ -1,0 +1,9 @@
+// Chapter 10: who touches stmerexports01, and how they are authorized.
+// Requires Storage diagnostic settings sending blob logs to Log Analytics (StorageBlobLogs).
+StorageBlobLogs
+| where AccountName == "stmerexports01"
+| where TimeGenerated > ago(30d)
+| summarize Requests = count(), FirstSeen = min(TimeGenerated), LastSeen = max(TimeGenerated)
+    by AuthenticationType, RequesterObjectId, CallerIpAddress, StatusCode
+| order by Requests desc
+// Before disabling Shared Key: any AuthenticationType of AccountKey or SAS identifies a caller to migrate (Case 10-D).

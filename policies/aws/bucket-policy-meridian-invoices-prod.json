@@ -1,0 +1,21 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    { "Sid": "DenyInsecureTransport",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": [ "arn:aws:s3:::meridian-invoices-prod",
+                    "arn:aws:s3:::meridian-invoices-prod/*" ],
+      "Condition": { "Bool": { "aws:SecureTransport": "false" } } },
+    { "Sid": "DenyIncomingExceptApprovedRoles",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": [ "s3:GetObject", "s3:PutObject" ],
+      "Resource": "arn:aws:s3:::meridian-invoices-prod/incoming/*",
+      "Condition": { "StringNotLike": { "aws:PrincipalArn": [
+        "arn:aws:iam::<account-id>:role/role-invoice-reader",
+        "arn:aws:iam::<account-id>:role/role-vendor-upload",
+        "arn:aws:iam::<account-id>:role/role-breakglass-storage" ] } } }
+  ]
+}

@@ -1,0 +1,18 @@
+# Chapter 7: Panorama device group DC1, set-format commands.
+# Status: Documented. Validate in a lab Panorama; object names are placeholders.
+# Export a named configuration snapshot before applying.
+
+set device-group DC1 address ERP-Web-01 ip-netmask 10.40.8.20/32
+set device-group DC1 address Portal-VIP ip-netmask 203.0.113.40/32
+
+set device-group DC1 pre-rulebase security rules BLK-Known-Bad from any to any source EDL-Threat-IPs destination any application any service any action deny log-end yes log-setting LF-XSIAM
+
+set device-group DC1 pre-rulebase security rules USR-to-ERP-web from users to dc-apps source any source-user "<finance-users-group>" destination ERP-Web-01 application [ ssl web-browsing ] service application-default action allow profile-setting group PG-Strict log-end yes log-setting LF-XSIAM description "Owner: Network Security; CR-<number>; review <date>"
+
+set device-group DC1 pre-rulebase security rules ADM-to-MGMT from users to mgmt source Admin-Jump-Hosts destination MGMT-Net application [ ssh ssl ] service application-default action allow profile-setting group PG-Strict log-end yes log-setting LF-XSIAM
+
+# Pre-NAT VIP with post-NAT zone (dmz):
+set device-group DC1 pre-rulebase security rules INET-to-Portal from untrust to dmz source any destination Portal-VIP application ssl service application-default action allow profile-setting group PG-Strict log-end yes log-setting LF-XSIAM
+
+# Log the default interzone deny:
+set device-group DC1 post-rulebase default-security-rules rules interzone-default action deny log-end yes log-setting LF-XSIAM

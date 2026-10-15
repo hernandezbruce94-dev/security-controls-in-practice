@@ -1,0 +1,17 @@
+# Chapter 7 verification: run on each managed firewall (not on Panorama).
+# Expected matching rule is shown after each command.
+
+# V7-1  -> USR-to-ERP-web
+test security-policy-match from users to dc-apps source 10.20.4.15 destination 10.40.8.20 destination-port 443 protocol 6 application ssl
+
+# V7-3  -> interzone-default (ssh not allowed to ERP)
+test security-policy-match from users to dc-apps source 10.20.4.15 destination 10.40.8.20 destination-port 22 protocol 6 application ssh
+
+# V7-4  -> INET-to-Portal (pre-NAT VIP, post-NAT zone dmz)
+test security-policy-match from untrust to dmz source 198.51.100.7 destination 203.0.113.40 destination-port 443 protocol 6 application ssl
+
+# Case 7-E: confirm the pushed rulebase on the device
+show running security-policy
+
+# Case 7-C: watch drop counters during a test
+show counter global filter delta yes severity drop
