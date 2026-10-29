@@ -6,6 +6,25 @@ The book follows a fictional enterprise, Meridian Regional Services, through 20 
 
 > **Read this first.** Every hostname, address, group, account, and ID here is fictional or a `<placeholder>`. Nothing here has been run against your environment. Product behavior is labeled **Documented** (based on vendor documentation reviewed October 2026), not lab-tested. Vendor schemas, CLI flags, and defaults change. Review every file, test in a non-production tenant, and follow your change process before you apply anything to production.
 
+## Start here
+
+**Configured? Prove It.** Pick a control, define what should happen, and keep the evidence of what actually happened.
+
+| Your next step | Open this |
+|---|---|
+| Record one verification case | [Verification record](templates/verification-record.md) |
+| Plan and record chapter tests | [Test matrices](tests) |
+| Track controls and ownership | [Control register](templates/control-register.csv) |
+| Review a planned change | [Change checklist](templates/change-record-checklist.md) |
+| Record operating acceptance | [Operating acceptance](templates/operating-acceptance.md) |
+
+1. Choose one example and read its assumptions and placeholders.
+2. Define the allowed result, denied result, and evidence you expect before testing.
+3. Adapt it in an authorized non-production environment.
+4. Record the observed result, scope, date, and evidence reference. Keep **Documented** and **Lab-tested** status distinct.
+
+A policy file is a starting point. The verification record is where the result earns its name.
+
 ## Books and free checklist
 
 - [Bruce L. Hernandez's books](https://sites.google.com/view/bruce-l-hernandez-books/home?utm_source=github&utm_medium=referral&utm_campaign=security_controls_companion&utm_content=readme_books)
@@ -44,7 +63,7 @@ Each `tests/chNN-verification.csv` lists the book's verification cases with thei
 
 ## Corrections and contributions
 
-Corrections to vendor behavior are welcome as issues. Please include a link to the vendor documentation that supports the change.
+Corrections to vendor behavior are welcome as issues. Please include a link to the vendor documentation that supports the change. See [CONTRIBUTING.md](CONTRIBUTING.md) for the information that makes a correction reproducible.
 
 ## License
 
