@@ -6,6 +6,11 @@ The book follows a fictional enterprise, Meridian Regional Services, through 20 
 
 > **Read this first.** Every hostname, address, group, account, and ID here is fictional or a `<placeholder>`. Nothing here has been run against your environment. Product behavior is labeled **Documented** (based on vendor documentation reviewed October 2026), not lab-tested. Vendor schemas, CLI flags, and defaults change. Review every file, test in a non-production tenant, and follow your change process before you apply anything to production.
 
+## Books and free checklist
+
+- [Bruce L. Hernandez's books](https://sites.google.com/view/bruce-l-hernandez-books/home?utm_source=github&utm_medium=referral&utm_campaign=security_controls_companion&utm_content=readme_books)
+- [Free Security Control Verification Checklist](https://sites.google.com/view/bruce-l-hernandez-books/free-security-checklist?utm_source=github&utm_medium=referral&utm_campaign=security_controls_companion&utm_content=readme_checklist)
+
 ## Contents
 
 | Folder | What it holds | Book chapters |
